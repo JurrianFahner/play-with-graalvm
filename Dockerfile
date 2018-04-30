@@ -8,7 +8,10 @@ RUN cd /workbench && \
                  -H:EnableURLProtocols=http \
                  -jar server.jar
 
-FROM ubuntu:17.10
+FROM scratch
 COPY --from=builder /workbench/target/server /app/server
+COPY --from=builder /lib64 /lib64
+COPY --from=builder /lib /lib
+COPY --from=builder /bin/sh /bin/sh
 EXPOSE 4567
 CMD /app/server
