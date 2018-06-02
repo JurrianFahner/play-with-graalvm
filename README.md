@@ -12,5 +12,6 @@ docker build -t spark .
 # Run the project:
 docker run -it -p 8084:4567 spark 
 ```
-
+You can visit the page in your browser on [http://localhost:8084](http://localhost:8084).
+On this page you can access the two endpoints which are availablle.
 
